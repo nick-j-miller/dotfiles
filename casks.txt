@@ -1,0 +1,12 @@
+google-chrome
+sequel-pro
+bettertouchtool
+day-o
+hipchat
+iina
+postico
+sourcetree
+sublime-text-dev
+the-unarchiver
+xee
+battle-net

@@ -1,0 +1,17 @@
+bash
+coreutils
+cowsay
+curl --with-openssl
+git --with-blk-sha1 --with-curl --with-gettext --with-openssl --with-pcre
+gnupg
+mpd --with-flac --with-lame --with-libmodplug --with-libvorbis --with-opus
+ncmpcpp
+neovim
+p7zip
+pianobar
+tree
+unrar
+wget --with-pcre
+zsh --with-unicode9
+zsh-syntax-highlighting
+zsh-autosuggestions
