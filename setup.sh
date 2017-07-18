@@ -9,43 +9,43 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool true;
 killall Dock 2>/dev/null
 	&& killall Finder 2>/dev/null;
 
-# # Xcode command line tools:
-# touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress;
-# PROD=$(softwareupdate -l |
-#   grep "\*.*Command Line" |
-#   head -n 1 | awk -F"*" '{print $2}' |
-#   sed -e 's/^ *//' |
-#   tr -d '\n')
-# softwareupdate -i "$PROD" --verbose;
+# Xcode command line tools:
+touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress;
+PROD=$(softwareupdate -l |
+	grep "\*.*Command Line" |
+	head -n 1 | awk -F"*" '{print $2}' |
+	sed -e 's/^ *//' |
+	tr -d '\n')
+softwareupdate -i "$PROD" --verbose;
 
-# if [ $? -ne 0 ]; then
-# 	echo "Couldn't install Xcode command line tools" >&2
-# 	exit 1
-# fi;
+if [ $? -ne 0 ]; then
+	echo "Couldn't install Xcode command line tools" >&2
+	exit 1
+fi;
 
-# # Homebrew:
-# /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)";
+# Homebrew:
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)";
 
-# if [ $? -ne 0 ]; then
-# 	echo "Couldn't install Homebrew" >&2;
-# 	exit 1;
-# fi;
+if [ $? -ne 0 ]; then
+	echo "Couldn't install Homebrew" >&2;
+	exit 1;
+fi;
 
-# # Ensure `brew doctor` doesn't report anything:
-# brew doctor
+# Ensure `brew doctor` doesn't report anything:
+brew doctor
 
-# if [ $? -ne 0 ]; then
-# 	echo "brew doctor reported errors/warnings. Fix before proceeding";
-# 	exit 1;
-# fi;
+if [ $? -ne 0 ]; then
+	echo "brew doctor reported errors/warnings. Fix before proceeding";
+	exit 1;
+fi;
 
 # Install Homebrew packages:
 while IFS='' read -r line || [[ -n "$line" ]]; do
 	brew install $line
 
-	if [ $? -eq 0 ]
+	if [ $? -ne 0 ]
 	then
-		printf "\n\n"
+		printf "Unable to install $line; you may need to install it manually\n"
 	fi
 done < "./packages.txt";
 
@@ -74,8 +74,8 @@ brew tap caskroom/cask;
 while IFS='' read -r line || [[ -n "$line" ]]; do
 	brew install $line
 
-	if [ $? -eq 0 ]
+	if [ $? -ne 0 ]
 	then
-		printf "\n\n"
+		printf "Unable to install $line; you may need to install it manually\n"
 	fi
 done < "./casks.txt";
