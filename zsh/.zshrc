@@ -35,6 +35,7 @@ alias t='osascript /usr/local/bin/change_terminal_color.scpt '
 alias tt='__set_title '
 alias vi='nvim '
 alias vim='nvim '
+alias subl='"/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" '
 
 # Plugins:
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -45,3 +46,11 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 __set_title() {
 	echo -e "\033];$1\007"
 }
+
+# Tabs:
+tabs -4
+
+# Keybindings:
+bindkey "^[[3~"  delete-char
+bindkey "^[3;5~" delete-char
+
