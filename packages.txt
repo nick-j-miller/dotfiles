@@ -2,16 +2,27 @@ bash
 coreutils
 cowsay
 curl --with-openssl
+ffmpeg
+fortune
 git --with-blk-sha1 --with-curl --with-gettext --with-openssl --with-pcre
+lua@5.1 --with-lldb --with-toolchain
 gnupg
+go
+htop
+lftp
+make
 mpd --with-flac --with-lame --with-libmodplug --with-libvorbis --with-opus
-ncmpcpp
+ncmpcpp --with-outputs
 neovim
+netcat
 p7zip
 pianobar
 tree
 unrar
 wget --with-pcre
+wine
+winetricks
+youtube-dl
 zsh --with-unicode9
-zsh-syntax-highlighting
 zsh-autosuggestions
+zsh-syntax-highlighting
