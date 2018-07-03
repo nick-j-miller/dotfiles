@@ -10,6 +10,7 @@ gnupg
 go
 htop
 lftp
+lolcat
 make
 mpd --with-flac --with-lame --with-libmodplug --with-libvorbis --with-opus
 ncmpcpp --with-outputs
@@ -17,6 +18,7 @@ neovim
 netcat
 p7zip
 pianobar
+toilet
 tree
 unrar
 wget --with-pcre
