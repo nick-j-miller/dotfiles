@@ -1,0 +1,7 @@
+[core]
+	excludesfile = ~/.gitignore_global
+[alias]
+	last = log -1 HEAD
+[user]
+	name = Nick Miller
+	email = nick@nmiller.info

@@ -1,7 +1,8 @@
 set number
-set relativenumber
-set cursorline
 set mouse=a
+set nopaste
+set nowrap
+set cursorline
 
 filetype plugin indent on
 syntax on 
@@ -29,3 +30,8 @@ hi Define       cterm=bold
 
 " Restore cursor on exit:
 au VimLeave * set guicursor=a:ver100
+
+" Use system clipboard for yanking:
+set clipboard+=unnamedplus
+set paste
+
