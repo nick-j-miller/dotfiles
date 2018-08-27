@@ -39,9 +39,6 @@ if [ $? -ne 0 ]; then
 	exit 1;
 fi;
 
-# Install `brew bundle`:
-brew bundle
-RET=$?
 
 if [ "$?" -ne 0 ]; then
 	echo "Couldn't install $TOPIC ($ret)" >&2
