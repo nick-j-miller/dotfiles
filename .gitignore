@@ -1,0 +1,5 @@
+.config/pianobar/state
+.config/mpd/*db
+.config/mpd/*pid
+.config/mpd/*state
+
