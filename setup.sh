@@ -39,15 +39,25 @@ if [ $? -ne 0 ]; then
 	exit 1;
 fi;
 
-# Install Homebrew packages:
-while IFS='' read -r line || [[ -n "$line" ]]; do
-	brew install $line
+# Install `brew bundle`:
+brew bundle
+RET=$?
 
-	if [ $? -ne 0 ]
-	then
-		printf "Unable to install $line; you may need to install it manually\n"
-	fi
-done < "./packages.txt";
+if [ "$?" -ne 0 ]; then
+	echo "Couldn't install $TOPIC ($ret)" >&2
+	exit $ret
+fi
+
+# Install Homebrew packages:
+TOPIC="Homebrew packages and casks"
+echo "Installing $TOPIC..."
+brew bundle --file=base.Brewfile
+
+TOPIC="Extra packages and casks"
+echo "Installing $TOPIC..."
+if [ -n "$BREW_INSTALL_EXTRAS" ]; then
+	brew bundle --file=extras.Brewfile
+fi
 
 # zsh pure prompt:
 git clone "https://github.com/sindresorhus/pure" "/usr/local/share/zsh-pure"
