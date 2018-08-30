@@ -99,3 +99,7 @@ if [ -d "/Volumes/Storage" ]; then
 
 	[[ -L "/Storage" ]] || ln -s "/Volumes/Storage" "/Storage"
 fi;
+
+# Copy utility configuration files:
+cp -Ri .config/* ~/.config
+cp -i .zshrc ~
