@@ -14,5 +14,7 @@ installation of said utilities.
 
 1. `BREW_INSTALL_EXTRAS`: install extra Homebrew packages and casks from the
    extras Brewfile, `extras.Brewfile`.
-2. `IGNORE_BREW_DOCTOR`: Ignore warnings and errors reported by `brew doctor`
+2. `IGNORE_BREW_DOCTOR`: ignore warnings and errors reported by `brew doctor`
    and continue script execution.
+3. `SYMLINK_USER_DIRS`: whether to remove default directories in `~` and
+   replace with symlinks to `/Volumes/Storage/$dir`.

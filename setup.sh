@@ -87,18 +87,18 @@ if [[ ! -d "$PURE_DIR" ]]; then
 fi
 
 # Storage symlinks:
-if [ -d "/Volumes/Storage" ]; then
-	me="$(whoami)"
-	dirs=(Documents Movies Music Pictures Projects)
+if [[ -n "${SYMLINK_USER_DIRS}" && -d "/Volumes/Storage" ]]; then
+	dirs=("Documents" "Movies" "Music" "Pictures" "Projects")
 
-	mkdir -p "/Users/$me/Projects" # Create empty dir. so final `rmdir` won't fail.
 
-	for d in "$dirs"; do
-		rm "/Users/$me/$d" && ln -s "/Volumes/Storage/$d" "/Users/$me/$d"
+	for dir in "${dirs}"; do
+		mkdir -p "~/${dir}" \
+			&& rmdir "~/${dir}" \
+			&& ln -s "/Volumes/Storage/${dir}" "~/${dir}"
 	done
 
 	[[ -L "/Storage" ]] || ln -s "/Volumes/Storage" "/Storage"
-fi;
+fi
 
 # Copy utility configuration files:
 cp -Ri .config/* ~/.config
