@@ -4,6 +4,9 @@ ARGC=$#
 ARGV=$*
 OS="$(uname -a | xargs -n1 | head -n1)"
 
+# Ensure SIGINT exits entire script instead of the current task:
+trap exit SIGINT
+
 if [ "$OS" != "Darwin" ]; then
 	echo "Script can only be run on macOS" >&2
 	exit 1
