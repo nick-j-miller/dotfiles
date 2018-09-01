@@ -56,7 +56,7 @@ __set_title() {
 }
 
 __set_profile() {
-	if [ "$TERM_PROGRAM" == "iTerm.app" ]; then
+	if [ "$TERM_PROGRAM" = "iTerm.app" ]; then
 		echo -e "\033]50;SetProfile=$1\a"
 	else
 		osascript "/usr/local/bin/change_terminal_color.scpt" "$*"
