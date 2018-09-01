@@ -4,10 +4,14 @@ tap "homebrew/cask"
 
 # Packages:
 brew "bash"
+brew "bat"
 brew "coreutils"
 brew "cowsay"
 brew "curl", args: ["with-openssl"]
+brew "entr"
+brew "fzf"
 brew "git", args: ["with-blk-sha1", "with-curl", "with-gettext", "with-openssl", "with-pcre"]
+brew "jq"
 brew "lua@5.1", args: ["with-lldb", "with-toolchain"]
 brew "htop"
 brew "make"
@@ -15,6 +19,7 @@ brew "mpd", args: ["with-flac", "with-lame", "with-libmodplug", "with-libvorbis"
 brew "ncmpcpp", args: ["with-outputs"]
 brew "neovim"
 brew "netcat"
+brew "noti"
 brew "p7zip"
 brew "pianobar"
 brew "toilet"
