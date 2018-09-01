@@ -38,7 +38,7 @@ alias push='git push '
 alias add='git add '
 alias stash='git stash '
 alias commit='git commit -m '
-alias t='osascript /usr/local/bin/change_terminal_color.scpt '
+alias t='__set_profile '
 alias tt='__set_title '
 alias vi='nvim '
 alias vim='nvim '
@@ -55,9 +55,17 @@ __set_title() {
 	echo -e "\033];$*\007"
 }
 
+__set_profile() {
+	if [ "$TERM_PROGRAM" == "iTerm.app" ]; then
+		echo -e "\033]50;SetProfile=$1\a"
+	else
+		osascript "/usr/local/bin/change_terminal_color.scpt" "$*"
+	fi
+}
+
 pandora() {
-    t dark
-    tt Pandora
+    __set_profile dark
+    __set_title Pandora
     pianobar 2>/dev/null
 }
 
@@ -85,3 +93,5 @@ bindkey "^U" backward-kill-line
 bindkey "^X\x7f" backward-kill-line
 bindkey "^X^_" redo
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
