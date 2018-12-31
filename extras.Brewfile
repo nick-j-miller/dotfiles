@@ -6,7 +6,6 @@ brew "ffmpeg"
 brew "gnupg"
 brew "go"
 brew "lftp"
-brew "lolcat"
 brew "wine"
 brew "winetricks"
 brew "youtube-dl"
@@ -18,10 +17,11 @@ casks = {
     "plex-media-server": "Plex Media Server",
     "transmission": "Transmission",
     "virtualbox": "Virtualbox",
+    "wireshark": "Wireshark",
     "xee": "Xee³",
 }
 
 cask_args appdir: appdir
-casks.each { |k, v|
-    cask k.to_s unless `stat "#{appdir}/#{v}.app" >/dev/null 2>&1`
-}
+casks.each_pair do |k, v|
+    cask k unless `stat "#{appdir}/#{v}.app" >/dev/null 2>&1`
+end
