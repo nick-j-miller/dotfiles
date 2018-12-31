@@ -1,10 +1,10 @@
 [core]
-	excludesfile = ~/.gitignore_global
-	editor = /usr/local/bin/nvim
+    excludesfile = ~/.gitignore_global
+    editor = /usr/local/bin/nvim
 [alias]
-	last = log -1 HEAD
-	unstage = reset HEAD $*
-	stage = add $*
+    last = log -1 HEAD
+    unstage = reset HEAD $*
+    stage = add $*
 [user]
-	name = Nick Miller
-	email = nick@nmiller.info
+    name = Nick Miller
+    email = nick@nmiller.info

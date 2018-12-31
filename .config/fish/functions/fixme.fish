@@ -1,3 +1,3 @@
 function fixme
-	command stty sane
+    command stty sane
 end

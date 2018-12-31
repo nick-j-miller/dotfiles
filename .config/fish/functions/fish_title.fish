@@ -1,11 +1,11 @@
 function fish_title
-	set -l title ""
+    set -l title ""
 
-	if test -n "$__custom_title"
-		set title "$__custom_title"
-	else
-		set title (short_pwd) "—" (status current-command)
-	end
+    if test -n "$__custom_title"
+        set title "$__custom_title"
+    else
+        set title (short_pwd) "—" (status current-command)
+    end
 
-	echo "$title"
+    echo "$title"
 end
