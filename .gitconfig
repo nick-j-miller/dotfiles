@@ -1,12 +1,10 @@
 [core]
 	excludesfile = ~/.gitignore_global
+	editor = /usr/local/bin/nvim
 [alias]
 	last = log -1 HEAD
+	unstage = reset HEAD $*
+	stage = add $*
 [user]
 	name = Nick Miller
 	email = nick@nmiller.info
-
-[pager]
-	diff = diff-so-fancy | less --tabs=1,5 -RFX
-	show = diff-so-fancy | less --tabs=1,5 -RFX
-
