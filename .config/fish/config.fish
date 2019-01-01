@@ -1,5 +1,5 @@
 # Paths:
-set PATH /usr/local/bin /usr/local/sbin /usr/local/opt/coreutils/libexec/gnubin $PATH
+set PATH /usr/local/opt/coreutils/libexec/gnubin $PATH
 set MANPATH /usr/local/opt/coreutils/libexec/gnuman $MANPATH
 set -x GOPATH /Volumes/Storage/Projects/go
 
