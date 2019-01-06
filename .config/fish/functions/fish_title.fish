@@ -4,7 +4,7 @@ function fish_title
     if test -n "$__custom_title"
         set title "$__custom_title"
     else
-        set title (short_pwd) "—" (status current-command)
+        set title (super_short_pwd) "—" (status current-command)
     end
 
     echo "$title"
