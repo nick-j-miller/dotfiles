@@ -5,6 +5,8 @@
     last = log -1 HEAD
     unstage = reset HEAD $*
     stage = add $*
+    s = status
+    ss = status --short
 [user]
     name = Nick Miller
     email = nick@nmiller.info

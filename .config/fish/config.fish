@@ -16,6 +16,12 @@ alias vi="nvim"
 alias vim="nvim"
 alias subl="/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl"
 alias g="grep --color=auto"
+alias checkout="git checkout"
+alias fap="git fetch --all && git pull"
+alias stash="git stash"
+alias merge="git merge"
+alias push="git push"
+alias commit="git commit"
 
 # Fish:
 set fish_prompt_pwd_dir_length 0
